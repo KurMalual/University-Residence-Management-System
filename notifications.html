@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/notificationstyles.css" />
+    <title>Frontend Mentor | Notifications page</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="notif_box">
+          <h2 class="title">Notifications</h2>
+          <span id="notifes"></span>
+        </div>
+        <p id="mark_all">Mark all as read</p>
+      </header>
+      <main>
+        <div class="notif_card unread">
+          <img src="./assets/images/avatar-mark-webber.webp" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Alice</strong> reacted to your recent announcement
+              <b>Room inspection</b>
+            </p>
+            <p class="time">1m ago</p>
+          </div>
+        </div>
+        <div class="notif_card unread">
+          <img src="./assets/images/avatar-angela-gray.webp" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Angela Gray</strong> completed the roommate survey
+            </p>
+            <p class="time">5m ago</p>
+          </div>
+        </div>
+        <div class="notif_card unread">
+          <img src="./assets/images/avatar-jacob-thompson.webp" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong class="link">Announcement</strong>
+              A room inspection is scheduled for July 30th. Please ensure your room is clean and all personal items are stored appropriately.
+              
+            </p>
+            <p class="time">1 day ago</p>
+          </div>
+        </div>
+        <div>
+          <div class="notif_card">
+          <div class="message_card">
+            <img
+            src="./assets/images/avatar-rizky-hasanuddin.webp"
+            alt="avatar"
+          />
+          <div class="description">
+            <p class="user_activity">
+              <strong>John Doe</strong> sent you a private message
+            </p>
+            <p class="time">5 days ago</p>
+          </div>
+          </div>
+        </div>
+        <div class="message">
+              <p>
+                The wifi password has been updated. Please check your email or the student portal for the new credentials.
+              </p>
+            </div>
+        </div>
+        
+        <div class="notif_card">
+          <img src="./assets/images/avatar-kimberly-smith.webp" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Kimberly Smith</strong> commented on your announcement
+            </p>
+            <p class="time">1 week ago</p>
+          </div>
+        </div>
+        <div class="notif_card">
+          <img src="./assets/images/avatar-nathan-peterson.webp" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Nathan Pererson</strong> reacted to your recent post
+              <b>Welcome Party</b>
+            </p>
+            <p class="time">2 weeks ago</p>
+          </div>
+        </div>
+        <div class="notif_card">
+          <img src="./assets/images/avatar-anna-kim.webp" alt="avatar" />
+          <div class="description">
+            <p class="user_activity">
+              <strong>Anna Kim</strong> laundry alert!
+              <strong class="link">Important</strong>
+            </p>
+            <p class="time">2 weeks ago</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/notification.js"></script>
+  </body>
+</html>
