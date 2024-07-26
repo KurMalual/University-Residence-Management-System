@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(105, 41, 41);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-control {
+        font-size: 0.875rem;
+    }
+
+    .card {
+        font-size: 0.875rem;
+    }
+}
