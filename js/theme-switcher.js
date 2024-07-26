@@ -1,29 +1,46 @@
-// theme-switcher.js
-
 function switchTheme() {
     const darkThemeCss = document.getElementById('dark-theme-css');
-    const themeText = document.getElementById('theme-text');
-    
+    const themeToggleButtonText = document.getElementById('theme-text'); 
+    const themeStatusText = document.getElementById('themeText'); 
+
     if (darkThemeCss.disabled) {
         darkThemeCss.disabled = false;
         localStorage.setItem('theme', 'dark');
-        themeText.textContent = 'Switch to Light Mode'; // Update text
+        themeToggleButtonText.textContent = 'Switch to Light Mode'; 
+        themeStatusText.textContent = 'Dark Mode'; 
     } else {
         darkThemeCss.disabled = true;
         localStorage.setItem('theme', 'light');
-        themeText.textContent = 'Switch to Dark Mode'; // Update text
+        themeToggleButtonText.textContent = 'Switch to Dark Mode'; 
+        themeStatusText.textContent = 'Light Mode'; 
     }
 }
 
-// Apply the saved theme on page load
+function updateThemeText() {
+    const darkThemeCss = document.getElementById('dark-theme-css');
+    const themeStatusText = document.getElementById('themeText');
+    
+    if (darkThemeCss.disabled) {
+        themeStatusText.textContent = 'Light Mode'; 
+    } else {
+        themeStatusText.textContent = 'Dark Mode'; 
+    }
+}
+
+// Applying the saved theme on page load
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
-    const themeText = document.getElementById('theme-text');
-    
+    const darkThemeCss = document.getElementById('dark-theme-css');
+    const themeToggleButtonText = document.getElementById('theme-text');
+    const themeStatusText = document.getElementById('themeText');
+
     if (savedTheme === 'dark') {
-        document.getElementById('dark-theme-css').disabled = false;
-        themeText.textContent = 'Switch to Light Mode'; // Update text
+        darkThemeCss.disabled = false;
+        themeToggleButtonText.textContent = 'Switch to Light Mode'; 
+        themeStatusText.textContent = 'Dark Mode'; 
     } else {
-        themeText.textContent = 'Switch to Dark Mode'; // Update text
+        darkThemeCss.disabled = true;
+        themeToggleButtonText.textContent = 'Switch to Dark Mode'; 
+        themeStatusText.textContent = 'Light Mode'; 
     }
 });
