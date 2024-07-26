@@ -30,7 +30,7 @@ $(document).ready(function() {
             roomCards.append(`
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="images/${room.image}" class="card-img-top" alt="Room ${room.number}">
+                        <img src="assets/images/${room.image}" class="card-img-top" alt="Room ${room.number}">
                         <div class="card-body">
                             <h5 class="card-title">Room ${room.number}</h5>
                             <p class="card-text">Resident: ${room.resident}</p>
