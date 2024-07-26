@@ -1,0 +1,45 @@
+/* Dark theme for the entire page */
+
+/* Background and text color */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  
+  /* Sidebar */
+  #sidebar {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  
+  /* Sidebar links and buttons */
+  .sidebar-list-item a {
+    color: #e0e0e0;
+  }
+  
+  .sidebar-list-item button {
+    color: #e0e0e0;
+    background-color: #333;
+  }
+  
+  /* Card styles */
+  .card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  
+  /* Charts */
+  .charts-card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  
+  /* Modify other elements similarly */
+  

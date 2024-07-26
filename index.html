@@ -1,151 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>University Dashboard</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>University Dashboard</title>
 
-    <!-- Montserrat Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <div class="grid-container">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css"> <!-- Default light theme CSS -->
+  <link rel="stylesheet" href="css/dark-theme.css" id="dark-theme-css" disabled> <!-- Dark theme CSS -->
 
-      <!-- Header -->
-      <header class="header">
-        <div class="menu-icon" onclick="openSidebar()">
-          <span class="material-icons-outlined">menu</span>
-        </div>
-        <div class="header-left">
-          <span class="material-icons-outlined">search</span>
-        </div>
-        <div class="header-right">
-          <span class="material-icons-outlined">notifications</span>
-          <span class="material-icons-outlined">email</span>
-          <span class="material-icons-outlined">account_circle</span>
-        </div>
-      </header>
-      <!-- End Header -->
+  <!-- Custom JS -->
+  <script src="js/theme-switcher.js" defer></script> <!-- Load JS after the DOM is fully loaded -->
 
-      <!-- Sidebar -->
-      <aside id="sidebar">
-        <div class="sidebar-title">
-          <div class="sidebar-brand">
-            <span class="material-icons-outlined">home</span> RESIDENCE
-          </div>
-          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
-        </div>
+</head>
+<body>
+  <div class="grid-container">
 
-        <ul class="sidebar-list">
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">dashboard</span> Dashboard
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">meeting_room</span> Room Management
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="maintenance.html" target="_blank">
-              <span class="material-icons-outlined">build</span> Maintenance Requests
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">people</span> Students
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="notifications.html" target="_self">
-              <span class="material-icons-outlined">notifications</span> Alerts and Notifications
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">brightness_4</span> Theme Switcher
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">settings</span> Settings
-            </a>
-          </li>
-        </ul>
-      </aside>
-      <!-- End Sidebar -->
-
-      <!-- Main -->
-      <main class="main-container">
-        <div class="main-title">
-          <h2>DASHBOARD</h2>
-        </div>
-
-        <div class="main-cards">
-
-          <div class="card">
-            <div class="card-inner">
-              <h3>ROOMS</h3>
-              <span class="material-icons-outlined">meeting_room</span>
-            </div>
-            <h1>249</h1>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h3>MAINTENANCE REQUESTS</h3>
-              <span class="material-icons-outlined">build</span>
-            </div>
-            <h1>23</h1>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h3>STUDENTS</h3>
-              <span class="material-icons-outlined">people</span>
-            </div>
-            <h1>1500</h1>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h3>ALERTS</h3>
-              <span class="material-icons-outlined">notification_important</span>
-            </div>
-            <h1>8</h1>
-          </div>
-
-        </div>
-
-        <div class="charts">
-
-          <div class="charts-card">
-            <h2 class="chart-title">Occupancy Rates</h2>
-            <div id="bar-chart"></div>
-          </div>
-
-          <div class="charts-card">
-            <h2 class="chart-title">Maintenance Requests Over Time</h2>
-            <div id="area-chart"></div>
-          </div>
-
-        </div>
-      </main>
-      <!-- End Main -->
-
+    <!-- Header -->
+    <header class="header">
+      <div class="menu-icon" onclick="openSidebar()">
+        <span class="material-icons-outlined">menu</span>
+      </div>
+      <div class="header-left">
+        <span class="material-icons-outlined">search</span>
+      </div>
+      <div class="header-right">
+        <span class="material-icons-outlined">notifications</span>
+        <span class="material-icons-outlined">email</span>
+        <span class="material-icons-outlined">account_circle</span>
+      </div>
+      <div id="theme-switcher">
+        <span class="material-icons-outlined">brightness_6</span>
+        <span id="themeText">Dark Mode</span>
     </div>
+    </header>
+    <!-- End Header -->
 
-    <!-- Scripts -->
-    <!-- ApexCharts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/scripts.js"></script>
-  </body>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sidebar-title">
+        <div class="sidebar-brand">
+          <span class="material-icons-outlined">home</span> RESIDENCE
+        </div>
+        <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+      </div>
+
+      <ul class="sidebar-list">
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">dashboard</span> Dashboard
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">meeting_room</span> Room Management
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="maintenance.html" target="_blank">
+            <span class="material-icons-outlined">build</span> Maintenance Requests
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">people</span> Students
+          </a>
+        </li>
+        <li class="sidebar-list-item">
+          <a href="notifications.html" target="_self">
+            <span class="material-icons-outlined">notifications</span> Alerts and Notifications
+          </a>
+        </li>
+        <li class="sidebar-list-item" id="theme-switcher" onclick="switchTheme()">
+          <span class="material-icons-outlined">brightness_4</span>
+          <span id="theme-text">Switch to Dark Mode</span>
+        </li>                       
+        <li class="sidebar-list-item">
+          <a href="#" target="_blank">
+            <span class="material-icons-outlined">settings</span> Settings
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- End Sidebar -->
+
+    <!-- Main -->
+    <main class="main-container">
+      <div class="main-title">
+        <h2>DASHBOARD</h2>
+      </div>
+
+      <div class="main-cards">
+
+        <div class="card">
+          <div class="card-inner">
+            <h3>ROOMS</h3>
+            <span class="material-icons-outlined">meeting_room</span>
+          </div>
+          <h1>249</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h3>MAINTENANCE REQUESTS</h3>
+            <span class="material-icons-outlined">build</span>
+          </div>
+          <h1>23</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h3>STUDENTS</h3>
+            <span class="material-icons-outlined">people</span>
+          </div>
+          <h1>1500</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h3>ALERTS</h3>
+            <span class="material-icons-outlined">notification_important</span>
+          </div>
+          <h1>8</h1>
+        </div>
+
+      </div>
+
+      <div class="charts">
+
+        <div class="charts-card">
+          <h2 class="chart-title">Occupancy Rates</h2>
+          <div id="bar-chart"></div>
+        </div>
+
+        <div class="charts-card">
+          <h2 class="chart-title">Maintenance Requests Over Time</h2>
+          <div id="area-chart"></div>
+        </div>
+
+      </div>
+    </main>
+    <!-- End Main -->
+
+  </div>
+
+  <!-- Scripts -->
+  <!-- ApexCharts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/scripts.js"></script>
+  <script src="js/theme-switcher.js" defer></script>
+</body>
 </html>
